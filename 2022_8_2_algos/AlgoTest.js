@@ -104,6 +104,31 @@ class SinglyLinkedList {
   }
 }
 
+contains(val) {
+  let runner = this.head
+  while (runner.data != val){
+    if (runner.next == null){
+      return False}
+    runner = runner.next
+  }
+  return True
+}
+
+
+// console.log(singleNodeList.removeBack());
+// console.log(singleNodeList.toArr());
+// console.log(biNodeList.removeBack());
+// console.log(biNodeList.toArr());
+// console.log(firstThreeList.removeBack());
+// console.log(firstThreeList.toArr());
+
+console.log(singleNodeList.contains(1));
+console.log(singleNodeList.toArr());
+console.log(biNodeList.contains(4));
+console.log(biNodeList.toArr());
+console.log(firstThreeList.contains(3));
+console.log(firstThreeList.toArr());
+
 /******************************************************************* 
 Multiple test lists already constructed to test your methods on.
 Below commented code depends on insertAtBack method to be completed,
