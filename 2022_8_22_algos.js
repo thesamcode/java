@@ -22,78 +22,6 @@
    * @param {any} item The new item to be added to the top / back.
    * @returns {number} The new length of this stack.
    */
-  push(item) {
-    this.items.push(item);
-    return this.size();
-  }
-
-  /**
-   * TODO: implement this method
-   * Removes the top / last item from this stack.
-   * - Time: O(1) constant.
-   * - Space: O(1) constant.
-   * @returns {any} The removed item or undefined if this stack was empty.
-   */
-  pop() {
-    return this.items.pop();
-  }
-
-  /**
-   * TODO: implement this method
-   * Retrieves the top / last item from this stack without removing it.
-   * - Time: O(1) constant.
-   * - Space: O(1) constant.
-   * @returns {any} The top / last item of this stack.
-   */
-  peek() {
-    return this.items[this.size() - 1];
-  }
-
-  /**
-   * TODO: implement this method
-   * Returns whether or not this stack is empty.
-   * - Time: O(1) constant.
-   * - Space: O(1) constant.
-   * @returns {boolean}
-   */
-  isEmpty() {
-    if (this.size() == 0) return true;
-    return false;
-  }
-
-  /**
-   * TODO: implement this method
-   * Returns the size of this stack.
-   * - Time: O(1) constant.
-   * - Space: O(1) constant.
-   * @returns {number} The length.
-   */
-  size() {
-    return this.items.length
-  }
-
-}
-
-class StackNode {
-  constructor(data) {
-    this.data = data;
-    this.next = null;
-  }
-}
-
-class LinkedListStack {
-  constructor() {
-    this.head = null;
-  }
-
-  /**
-   * TODO: implement this method
-   * Adds a new given item to the top / back of this stack.
-   * - Time: O(1) constant.
-   * - Space: O(1) constant.
-   * @param {any} item The new item to be added to the top / back.
-   * @returns {number} The new length of this stack.
-   */
    push(item) {
     var node = new StackNode(item);
     var currHead = this.head;
@@ -136,8 +64,8 @@ class LinkedListStack {
     * @returns {boolean}
     */
    isEmpty() {
-    if(this.head == null)  return true;
-    return false
+    if(this.head == null) return true;
+    return false;
    }
  
    /**
@@ -150,13 +78,89 @@ class LinkedListStack {
    size() {
     if(this.head == null) return 0;
     var runner = this.head;
-    var size = 1
-    while (runner.next != null){
-      runner = runner.next;
+    var size = 1;
+    while(runner.next != null){
+      runner = runner.next
       size++
     }
     return size;
    }
+
+}
+
+class StackNode {
+  constructor(data) {
+    this.data = data;
+    this.next = null;
+  }
+}
+
+class LinkedListStack {
+  constructor() {
+    this.head = null;
+  }
+
+  /**
+   * TODO: implement this method
+   * Adds a new given item to the top / back of this stack.
+   * - Time: O(1) constant.
+   * - Space: O(1) constant.
+   * @param {any} item The new item to be added to the top / back.
+   * @returns {number} The new length of this stack.
+   */
+   push(item) { 
+    this.items.push(item);
+
+    return this.items.length;
+}
+
+/**
+ * TODO: implement this method
+ * Removes the top / last item from this stack.
+ * - Time: O(1) constant.
+ * - Space: O(1) constant.
+ * @returns {any} The removed item or undefined if this stack was empty.
+ */
+pop() { 
+    if(this.isEmpty()) return null;
+    else {
+        return this.items.pop();
+    }
+}
+
+/**
+ * TODO: implement this method
+ * Retrieves the top / last item from this stack without removing it.
+ * - Time: O(1) constant.
+ * - Space: O(1) constant.
+ * @returns {any} The top / last item of this stack.
+ */
+peek() { 
+    return this.items[this.items.length - 1];
+}
+
+/**
+ * TODO: implement this method
+ * Returns whether or not this stack is empty.
+ * - Time: O(1) constant.
+ * - Space: O(1) constant.
+ * @returns {boolean}
+ */
+isEmpty() { 
+    return this.items[0] == null;
+}
+
+/**
+ * TODO: implement this method
+ * Returns the size of this stack.
+ * - Time: O(1) constant.
+ * - Space: O(1) constant.
+ * @returns {number} The length.
+ */
+size() { 
+    return this.items.length;
+}
+
 }
 
 
